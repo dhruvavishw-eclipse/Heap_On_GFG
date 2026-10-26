@@ -13,14 +13,13 @@ public class _03_Kth_Largest {
     static int largest(int arr [], int k){
        PriorityQueue<Integer> pq=new PriorityQueue<>();
 
-       for(int ele: arr){
-        pq.add(ele);
+       for(int ele: arr){   // n log k
+                pq.add(ele);  // log k
 
-        if(pq.size()>k){
-            pq.poll();
-        }
-       }
-       return pq.peek();
+                if(pq.size()>k) pq.remove();  // log k
+                              
+            }
+            return pq.peek();
     }
 
 }
