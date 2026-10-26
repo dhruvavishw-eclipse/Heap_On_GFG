@@ -14,13 +14,11 @@ public class _02_Kth_Smallest {
            
            PriorityQueue<Integer> pq= new PriorityQueue<>(Collections.reverseOrder()); // This is max Heap
 
-            for(int ele: arr){
-                pq.add(ele);
+            for(int ele: arr){   // n log k
+                pq.add(ele);  // log k
 
-
-                if(pq.size()>k){
-                   pq.remove();
-                }
+                if(pq.size()>k) pq.remove();  // log k
+                              
             }
             return pq.peek();
         }
